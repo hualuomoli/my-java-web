@@ -40,4 +40,9 @@
 
 	</settings>
 
+	<!-- 插件配置 -->
+	<plugins>
+		<plugin interceptor="com.github.hualuomoli.core.interceptor.PaginationInterceptor" />
+	</plugins>
+
 </configuration>
