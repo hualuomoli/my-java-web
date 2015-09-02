@@ -1,4 +1,4 @@
-package com.github.hualuomoli.commons.prop;
+package com.github.hualuomoli.demo.util;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,13 +8,23 @@ import org.apache.commons.io.FileUtils;
 
 import com.google.common.collect.Lists;
 
+/**
+ * 替换文件夹
+ * @author hualuomoli
+ *
+ */
 public class ReplacePackage {
 
 	public static void main(String[] args) throws IOException {
 
-		String dir = "C:/Users/Dean/Desktop/persistence";
-		String src = "com.github.hualuomoli.common.persistence";
-		String dest = "com.github.hualuomoli.core";
+		// String dir = "C:/Users/Dean/Desktop/package";
+		// String src = "org.springframework";
+		// String dest = "com.github.hualuomoli";
+
+		String dir = args[0];
+		String src = args[1];
+		String dest = args[2];
+
 		src = src.replaceAll("[.]", "\\.");
 		replace(new File(dir), src, dest);
 	}

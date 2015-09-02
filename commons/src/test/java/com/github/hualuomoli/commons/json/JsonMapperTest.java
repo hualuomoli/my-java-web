@@ -9,7 +9,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.github.hualuomoli.commons.test.entity.Demo;
+import com.github.hualuomoli.demo.entity.Demo;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
