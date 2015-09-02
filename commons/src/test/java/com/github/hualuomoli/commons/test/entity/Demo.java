@@ -1,8 +1,6 @@
-package com.github.hualuomoli.core.test.entity;
+package com.github.hualuomoli.commons.test.entity;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
-
-import com.github.hualuomoli.core.entity.Page;
 
 /**
  * test entity
@@ -15,8 +13,6 @@ public class Demo {
 	private String email;
 	private Integer age;
 	private char sex;
-
-	private Page page;
 
 	public Demo() {
 	}
@@ -58,14 +54,6 @@ public class Demo {
 
 	public void setSex(char sex) {
 		this.sex = sex;
-	}
-
-	public Page getPage() {
-		return page;
-	}
-
-	public void setPage(Page page) {
-		this.page = page;
 	}
 
 	@Override
