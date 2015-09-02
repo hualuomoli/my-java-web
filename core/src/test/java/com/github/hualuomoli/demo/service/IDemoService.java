@@ -1,9 +1,9 @@
-package com.github.hualuomoli.core.test.service;
+package com.github.hualuomoli.demo.service;
 
 import java.util.List;
 
 import com.github.hualuomoli.core.entity.Page;
-import com.github.hualuomoli.core.test.entity.Demo;
+import com.github.hualuomoli.demo.entity.Demo;
 
 /**
  * test service

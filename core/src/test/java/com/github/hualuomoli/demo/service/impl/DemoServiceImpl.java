@@ -1,4 +1,4 @@
-package com.github.hualuomoli.core.test.service.impl;
+package com.github.hualuomoli.demo.service.impl;
 
 import java.util.List;
 
@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.github.hualuomoli.core.entity.Page;
-import com.github.hualuomoli.core.test.entity.Demo;
-import com.github.hualuomoli.core.test.mapper.IDemoMapper;
-import com.github.hualuomoli.core.test.service.IDemoService;
+import com.github.hualuomoli.demo.entity.Demo;
+import com.github.hualuomoli.demo.mapper.IDemoMapper;
+import com.github.hualuomoli.demo.service.IDemoService;
 
-@Service(value = "com.github.hualuomoli.core.test.service.impl.DemoServiceImpl")
+@Service
 public class DemoServiceImpl implements IDemoService {
 
 	@Autowired

@@ -1,4 +1,4 @@
-package com.github.hualuomoli.core.test.entity;
+package com.github.hualuomoli.demo.entity;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 

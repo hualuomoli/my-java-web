@@ -1,18 +1,18 @@
-package com.github.hualuomoli.core.test.mapper;
+package com.github.hualuomoli.demo.mapper;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.springframework.stereotype.Repository;
 
-import com.github.hualuomoli.core.test.entity.Demo;
+import com.github.hualuomoli.demo.entity.Demo;
 
 /**
  * test mapper
  * @author hualuomoli
  *
  */
-@Repository(value = "com.github.hualuomoli.core.test.entity.IDemoMapper")
+@Repository(value = "com.github.hualuomoli.demo.mapper.IDemoMapper")
 public interface IDemoMapper {
 
 	// insert
