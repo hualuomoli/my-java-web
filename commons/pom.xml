@@ -7,7 +7,7 @@
 		<groupId>com.github.hualuomoli</groupId>
 		<artifactId>java-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../../parent/pom.xml</relativePath>
+		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
 	<artifactId>java-commons</artifactId>
