@@ -10,7 +10,7 @@
 		<relativePath>../../parent/pom.xml</relativePath>
 	</parent>
 
-	<artifactId>java-common</artifactId>
+	<artifactId>java-commons</artifactId>
 	<packaging>jar</packaging>
 
 	<!-- 项目属性 -->
