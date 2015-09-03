@@ -9,6 +9,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 
 import com.github.hualuomoli.commons.prop.PropertiesLoader;
+import com.github.hualuomoli.core.global.GlobalProp;
 
 /**
  * 自定义加载器
@@ -50,6 +51,9 @@ public class PropertyPlaceholderConfigurer extends
 			}
 		}
 		props = properties;
+
+		// 设置资源到全局资源
+		GlobalProp.setProps(props);
 
 		if (logger.isDebugEnabled()) {
 			logger.debug("properties message {}", PropertiesLoader.converProp2MapString(props));
