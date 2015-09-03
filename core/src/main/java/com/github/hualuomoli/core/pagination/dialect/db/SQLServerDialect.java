@@ -1,9 +1,6 @@
-/**
- * Copyright &copy; 2013-2015 山东易科德软件有限公司 All rights reserved.
- */
-package com.github.hualuomoli.core.dialect.db;
+package com.github.hualuomoli.core.pagination.dialect.db;
 
-import com.github.hualuomoli.core.dialect.Dialect;
+import com.github.hualuomoli.core.pagination.dialect.Dialect;
 
 /**
  * MSSQLServer 数据库实现分页方言

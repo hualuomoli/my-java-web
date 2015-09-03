@@ -1,19 +1,15 @@
-/**
- * Copyright &copy; 2013-2015 山东易科德软件有限公司 All rights reserved.
- */
-package com.github.hualuomoli.core.dialect.db;
+package com.github.hualuomoli.core.pagination.dialect.db;
 
-import com.github.hualuomoli.core.dialect.Dialect;
+import com.github.hualuomoli.core.pagination.dialect.Dialect;
 
 /**
- * Dialect for HSQLDB
- *
+ * Postgre Sql的方言实现
  * @author poplar.yfyang
  * @version 1.0 2010-10-10 下午12:31
  * @since JDK 1.5
  */
-public class HSQLDialect implements Dialect {
-    @Override
+public class PostgreSQLDialect implements Dialect {
+
     public boolean supportsLimit() {
         return true;
     }
@@ -38,13 +34,12 @@ public class HSQLDialect implements Dialect {
      * @param limitPlaceholder  分页纪录条数占位符号
      * @return 包含占位符的分页sql
      */
-    public String getLimitString(String sql, int offset, String offsetPlaceholder, String limitPlaceholder) {
-        boolean hasOffset = offset > 0;
-        return
-                new StringBuffer(sql.length() + 10)
-                        .append(sql)
-                        .insert(sql.toLowerCase().indexOf("select") + 6, hasOffset ? " limit " + offsetPlaceholder + " " + limitPlaceholder : " top " + limitPlaceholder)
-                        .toString();
+    public String getLimitString(String sql, int offset,
+                                 String offsetPlaceholder, String limitPlaceholder) {
+        StringBuilder pageSql = new StringBuilder().append(sql);
+        pageSql = offset <= 0
+                ? pageSql.append(" limit ").append(limitPlaceholder) :
+                pageSql.append(" limit ").append(limitPlaceholder).append(" offset ").append(offsetPlaceholder);
+        return pageSql.toString();
     }
-
 }
