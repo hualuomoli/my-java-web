@@ -3,6 +3,7 @@ package com.github.hualuomoli.demo.service;
 import java.util.List;
 
 import com.github.hualuomoli.core.entity.Page;
+import com.github.hualuomoli.core.exception.VersionConflictException;
 import com.github.hualuomoli.demo.entity.Demo;
 
 /**
@@ -13,15 +14,27 @@ import com.github.hualuomoli.demo.entity.Demo;
 public interface IDemoService {
 
 	// insert
-	int insert(Demo demo);
+	void insert(Demo demo);
+
+	// update
+	void update(Demo demo) throws VersionConflictException;
+
+	// delete
+	void delete(Demo demo);
+
+	// get
+	Demo get(String id);
+
+	// get
+	Demo get(Demo demo);
 
 	// find list by param
 	List<Demo> findList(Demo demo);
 
-	// 查询分页
-	Page findPage(Demo demo, Integer pageNo, Integer pageSize);
-
-	// 查询分页
+	// find page by param
 	Page findPage(Demo demo, Page page);
+
+	// set param name
+	List<Demo> findListByEmail(String email);
 
 }

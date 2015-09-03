@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.github.hualuomoli.core.entity.Page;
+import com.github.hualuomoli.core.exception.VersionConflictException;
 import com.github.hualuomoli.demo.entity.Demo;
 import com.github.hualuomoli.demo.mapper.IDemoMapper;
 import com.github.hualuomoli.demo.service.IDemoService;
@@ -17,8 +18,30 @@ public class DemoServiceImpl implements IDemoService {
 	private IDemoMapper demoMapper;
 
 	@Override
-	public int insert(Demo demo) {
-		return demoMapper.insert(demo);
+	public void insert(Demo demo) {
+		demoMapper.insert(demo);
+	}
+
+	@Override
+	public void update(Demo demo) throws VersionConflictException {
+		demoMapper.update(demo);
+	}
+
+	@Override
+	public void delete(Demo demo) {
+		demoMapper.delete(demo);
+	}
+
+	@Override
+	public Demo get(String id) {
+		Demo demo = new Demo();
+		demo.setId(id);
+		return demoMapper.get(demo);
+	}
+
+	@Override
+	public Demo get(Demo demo) {
+		return demoMapper.get(demo);
 	}
 
 	@Override
@@ -27,15 +50,15 @@ public class DemoServiceImpl implements IDemoService {
 	}
 
 	@Override
-	public Page findPage(Demo demo, Integer pageNo, Integer pageSize) {
-		return this.findPage(demo, new Page(pageNo, pageSize));
-	}
-
-	@Override
 	public Page findPage(Demo demo, Page page) {
 		demo.setPage(page);
 		page.setList(demoMapper.findList(demo));
 		return page;
+	}
+
+	@Override
+	public List<Demo> findListByEmail(String email) {
+		return demoMapper.findListByEmail(email);
 	}
 
 }

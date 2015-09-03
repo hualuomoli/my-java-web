@@ -27,7 +27,13 @@ public interface IDemoMapper {
 	@Delete("delete from demo t where t.id=#{id}")
 	int delete(Demo demo);
 
+	// get
+	Demo get(Demo demo);
+
 	// find list by param
 	List<Demo> findList(Demo demo);
+
+	// set param name
+	List<Demo> findListByEmail(String email);
 
 }
