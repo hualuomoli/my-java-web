@@ -16,6 +16,8 @@ public class Demo {
 	private Integer age;
 	private char sex;
 
+	private Integer version; // 当前数据版本
+
 	private Page page;
 
 	public Demo() {
@@ -58,6 +60,14 @@ public class Demo {
 
 	public void setSex(char sex) {
 		this.sex = sex;
+	}
+
+	public Integer getVersion() {
+		return version;
+	}
+
+	public void setVersion(Integer version) {
+		this.version = version;
 	}
 
 	public Page getPage() {

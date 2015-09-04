@@ -1,4 +1,4 @@
-package com.github.hualuomoli.demo.controller;
+package com.github.hualuomoli.demo.web;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
