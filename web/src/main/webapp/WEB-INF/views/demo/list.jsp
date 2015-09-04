@@ -7,15 +7,10 @@
 <title>list</title>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
-<script>
-function junp(pageNo,pageSize){
-	$('form').attr("action","/demo/list?page.pageNo="+pageNo+"&page.pageSize="+pageSize);
-	$('form').submit();
-}
-</script>
 </head>
 <body>
-	<form action="" method="get">
+	<form action="/web/demo/list" method="post">
+		<input id="pageNo" value="1" /> <input id="pageSize" value="7" />
 		<table>
 			<thead>
 				<tr>
@@ -39,9 +34,9 @@ function junp(pageNo,pageSize){
 			</tbody>
 			<tfoot>
 				<tr>
-					<td colspan="5">第${page.pageNo}/${page.pageNumber}页，共${page.count}条&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;跳转<input
-						type="text" id="pageNo" /><input type="button"
-						onclick="jump($('#pageNo').val(),${page.pageSize})" /></td>
+					<td colspan="5">第${page.pageNo}/${page.pageNumber}页，共${page.count}条&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+						type="text" name="pageNo" /><input type="submit" value="跳转 ">
+						<input name="pageSize" type="hidden" value="${page.pageSize}">
 				</tr>
 			</tfoot>
 		</table>

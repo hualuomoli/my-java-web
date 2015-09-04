@@ -3,6 +3,7 @@ package com.github.hualuomoli.demo.web;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,9 +30,13 @@ public class DemoController {
 	// list
 	@RequestMapping(value = "list")
 	public String list(Demo demo, Model model, HttpServletRequest request, HttpServletResponse response) {
-		Page page = demo.getPage();
-		if (page == null) {
-			page = new Page(1, 6);
+		String pageNo = request.getParameter("pageNo");
+		String pageSize = request.getParameter("pageSize");
+		Page page = null;
+		if (StringUtils.isEmpty(pageNo)) {
+			page = new Page(1, 7);
+		} else {
+			page = new Page(Integer.parseInt(pageNo), Integer.parseInt(pageSize));
 		}
 		page = demoService.findPage(demo, page);
 		model.addAttribute("page", page);
