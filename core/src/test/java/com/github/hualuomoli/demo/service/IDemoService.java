@@ -1,5 +1,6 @@
 package com.github.hualuomoli.demo.service;
 
+import java.util.Collection;
 import java.util.List;
 
 import com.github.hualuomoli.core.entity.Page;
@@ -16,11 +17,17 @@ public interface IDemoService {
 	// insert
 	void insert(Demo demo);
 
+	// batch insert
+	void batchInsert(Collection<Demo> demoList);
+
 	// update
 	void update(Demo demo) throws VersionConflictException;
 
 	// delete
 	void delete(Demo demo);
+
+	// clear
+	void clear();
 
 	// get
 	Demo get(String id);

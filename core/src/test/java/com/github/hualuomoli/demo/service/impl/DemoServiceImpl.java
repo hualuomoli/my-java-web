@@ -1,5 +1,6 @@
 package com.github.hualuomoli.demo.service.impl;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,11 @@ public class DemoServiceImpl implements IDemoService {
 	@Override
 	public void insert(Demo demo) {
 		demoMapper.insert(demo);
+	}
+
+	@Override
+	public void batchInsert(Collection<Demo> demoList) {
+		demoMapper.batchInsert(demoList);
 	}
 
 	@Override
@@ -59,6 +65,11 @@ public class DemoServiceImpl implements IDemoService {
 	@Override
 	public List<Demo> findListByEmail(String email) {
 		return demoMapper.findListByEmail(email);
+	}
+
+	@Override
+	public void clear() {
+		demoMapper.clear();
 	}
 
 }

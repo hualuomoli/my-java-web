@@ -42,7 +42,8 @@
 
 	<!-- 插件配置 -->
 	<plugins>
-		<plugin interceptor="com.github.hualuomoli.core.interceptor.PaginationInterceptor" />
+		<plugin
+			interceptor="com.github.hualuomoli.core.pagination.interceptor.PaginationInterceptor" />
 	</plugins>
 
 </configuration>
