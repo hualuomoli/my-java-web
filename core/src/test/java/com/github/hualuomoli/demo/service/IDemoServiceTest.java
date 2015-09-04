@@ -102,7 +102,7 @@ public class IDemoServiceTest extends JUnit4Runner {
 	@Test(sort = 23)
 	public void testFindPage() {
 		Demo demo = new Demo();
-		demo.setEmail("test@qq.com");
+		demo.setEmail("testme@qq.com");
 		Page page = new Page(5, 6);
 		page = demoService.findPage(demo, page);
 		logger.debug("pageNo {} , pageSize {} , count {} , number {}", page.getPageNo(), page.getPageSize(),
@@ -111,7 +111,7 @@ public class IDemoServiceTest extends JUnit4Runner {
 
 	@Test(sort = 24)
 	public void testFindListByEmail() {
-		List<Demo> list = demoService.findListByEmail("test@126.com");
+		List<Demo> list = demoService.findListByEmail("testme@qq.com");
 		logger.debug("list {}", list.size());
 	}
 
