@@ -70,6 +70,7 @@
 				<configuration>
 					<source>${jdk.version}</source>
 					<target>${jdk.version}</target>
+					<encoding>utf8</encoding>
 					<showWarnings>true</showWarnings>
 					<compilerArguments>
 						<verbose />
