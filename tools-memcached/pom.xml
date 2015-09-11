@@ -16,15 +16,21 @@
 	<!-- 项目属性 -->
 	<properties>
 
-		
+
 
 	</properties>
 
 	<!-- 依赖项定义 -->
 	<dependencies>
 
+		<!-- hualuomoli commons -->
+		<dependency>
+			<groupId>com.github.hualuomoli</groupId>
+			<artifactId>java-commons</artifactId>
+			<version>${project.parent.version}</version>
+			<scope>compile</scope>
+		</dependency>
 
-		
 
 
 	</dependencies>
