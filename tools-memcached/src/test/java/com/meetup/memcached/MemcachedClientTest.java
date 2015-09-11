@@ -2,9 +2,11 @@ package com.meetup.memcached;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.slf4j.LoggerFactory;
 
 public class MemcachedClientTest {
 
+	private static final org.slf4j.Logger logger = LoggerFactory.getLogger(MemcachedClientTest.class);
 	private static final String poolName = "hualuomoli";
 	private static MemcachedClient client = null;
 
@@ -37,8 +39,8 @@ public class MemcachedClientTest {
 	@Test
 	public void test() {
 		client.set("foo", "This is a test String");
-		String bar = (String) client.get("foo");
-		System.out.println(bar);
+		String foo = (String) client.get("foo");
+		logger.debug("foo from cache {}", foo);
 	}
 
 }
