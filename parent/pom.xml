@@ -121,6 +121,7 @@
 				<version>2.1.2</version>
 				<configuration>
 					<attach>true</attach>
+					<encoding>utf8</encoding>
 				</configuration>
 				<executions>
 					<execution>
@@ -131,7 +132,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
 
 		</plugins>
 
